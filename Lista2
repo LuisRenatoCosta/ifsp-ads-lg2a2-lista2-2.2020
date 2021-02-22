@@ -1,0 +1,12 @@
+package lista002;
+
+import java.math.BigDecimal;
+
+public class Lista002 {
+
+    public static void main(String[] args) {
+        
+        
+        Orcamento o1 = new Orcamento(new BigDecimal(82), "Combustível", TipoTransacao.RECEITA, Pagamento.DINHEIRO);
+        o1.descricao();      
+}}
