@@ -1,0 +1,15 @@
+package lista002;
+
+public enum Pagamento {
+    
+    CREDITO((float)0.00), DEBITO((float)0.05), DINHEIRO((float)0.05), CHEQUE((float)0.00), TRANSFERENCIA_BANCARIA((float)0.00);
+    
+    private float porcentagem;
+    
+    
+    private Pagamento(float porcentagem){
+        this.porcentagem = porcentagem;}
+    
+    public float getPagamento(){
+        return this.porcentagem;}
+}
