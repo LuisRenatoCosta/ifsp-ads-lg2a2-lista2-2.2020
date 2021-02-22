@@ -1,0 +1,7 @@
+package lista002;
+
+public enum TipoTransacao {
+    
+        DESPESA, RECEITA;
+
+}
