@@ -1,0 +1,66 @@
+package lista002;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+public class Orcamento {
+    
+    //Atributos
+    private LocalDateTime data;
+    private BigDecimal valor;
+    private String descricao;
+    private TipoTransacao tipo;
+    private Pagamento formaDePagamento;
+    private String comentario;
+    private BigDecimal total;
+            
+    //Método Construtor
+    public Orcamento(BigDecimal valor, String descricao, TipoTransacao tipo, Pagamento formaDePagamento){
+        this.data = LocalDateTime.now();
+        this.valor = valor;
+        this.descricao = descricao;
+        this.tipo = tipo;
+        this.formaDePagamento = formaDePagamento;}
+    
+    //Getters e Setters
+    public LocalDateTime getData(){
+        return data;}
+    public void setData(LocalDateTime data){
+        this.data = data;}
+    public BigDecimal getValor(){
+        return valor;}
+    public void setValor(BigDecimal valor){
+        this.valor = valor;}
+    public String getDescricao(){
+        return descricao;}
+    public void setDescricao(String descricao){
+        this.descricao = descricao;}
+    public TipoTransacao getTipo(){
+        return tipo;}
+    public void setTipo(TipoTransacao tipo){
+        this.tipo = tipo;}
+    public Pagamento getFormaDePagamento(){
+        return formaDePagamento;}
+    public void setFormaDePagamento (Pagamento formaDePagamento){
+        this.formaDePagamento = formaDePagamento;}
+    public String getComentario(){
+        return comentario;}
+    public void setComentario(String comentario){
+        this.comentario = comentario;}
+    public BigDecimal getTotal(){
+        return total;}
+    public void setTotal(BigDecimal total){
+        this.total = total;}
+
+    //Métodos complementares
+    public void descricao(){
+        System.out.println("Data: " + this.getData());
+        System.out.println("Desconto: " + this.formaDePagamento.getPagamento());
+        this.valor = this.valor.subtract(this.valor.multiply(new BigDecimal(this.formaDePagamento.getPagamento())));//this.valor * (1 - this.formaDePagamento.getPagamento());
+        System.out.println("Valor: " + this.getValor());
+        System.out.println("Descrição: " + this.getDescricao());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Forma De Pagamento: " + getFormaDePagamento());
+        if (this.getComentario() != null){
+            System.out.println("Comentário: " + getComentario());}}
+}
